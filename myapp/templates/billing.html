@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px" align="center" cellpadding="10px" width="100%" id=table>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th >Product name</th>
+            <th>description</th>
+            <th>categorie</th>
+            <th>sub categorie</th>
+            <th>weight</th>
+            <th>Quantity</th>
+            <th>purchase</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr >
+          <td>1</td>
+          
+          <td>Macbook Pro</td>
+          <td>8GB/256GB SSD</td>
+          <td>Electronics</td>
+          <td>Computers</td>
+          <td>2kg</td>
+          <td>50</td>
+          <td><button type="submit">add</button></td>
+         
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Macbook air</td>
+            <td>8GB/256GB SSD</td>
+            <td>Electronics</td>
+            <td>Mobile</td>
+            <td>2kg</td>
+            <td>30</td>
+            <td><button type="submit">add</button></td>
+          </tr>
+         
+            
+    
+    </tbody>
+    </table>
+    </td>
+    </tr>
+    </table>
+    
+    
+    
+        <script>
+           
+           var rIndex,
+                    table = document.getElementById("table");
+                
+                
+                // add Row
+                function addHtmlTableRow()
+                {
+                    // get the table by id
+                    // create a new row and cells
+                    // get value from input text
+                    // set the values into row cell's
+                   
+                    var newRow = table.insertRow(table.length),
+                        cell1 = newRow.insertCell(0),
+                        cell2 = newRow.insertCell(1),
+                        cell3 = newRow.insertCell(2),
+                        cell4 = newRow.insertCell(3),
+                        cell5 = newRow.insertCell(4),
+                        cell6 = newRow.insertCell(5),
+                        cell7 = newRow.insertCell(6),
+                        id = document.getElementById("id").value,
+                        pro = document.getElementById("pro").value,
+                        description1 = document.getElementById("description1").value,
+                        cat = document.getElementById("cat").value,
+                        subcat = document.getElementById("subcat").value,
+                        weigh = document.getElementById("weigh").value,
+                        qty = document.getElementById("qty").value;
+                    cell1.innerHTML = id;
+                    cell2.innerHTML = pro;
+                    cell3.innerHTML = description1;
+                    cell4.innerHTML = cat;
+                    cell5.innerHTML = subcat;
+                    cell6.innerHTML = weigh;
+                    cell7.innerHTML = qty;
+                    // call the function to set the event to the new row
+                    selectedRowToInput();
+                }
+               
+                
+                // display selected row data into input text
+                function selectedRowToInput()
+                {
+                    
+                    for(var i = 1; i < table.rows.length; i++)
+                    {
+                        table.rows[i].onclick = function()
+                        {
+                          // get the seected row index
+                          rIndex = this.rowIndex;
+                          document.getElementById("id").value = this.cells[0].innerHTML;
+                          document.getElementById("pro").value = this.cells[1].innerHTML;
+                          document.getElementById("description1").value = this.cells[2].innerHTML;
+                          document.getElementById("cat").value = this.cells[3].innerHTML;
+                          document.getElementById("subcat").value = this.cells[4].innerHTML;
+                          document.getElementById("weigh").value = this.cells[5].innerHTML;
+                          document.getElementById("qty").value = this.cells[6].innerHTML;
+                        };
+                    }
+                }
+                selectedRowToInput();
+                
+           
+    </script>
+    
+
+<br><br>
+
+    <table border="1px" align="center" cellpadding="10px" width="100%" id=table>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th >Product name</th>
+            <th>description</th>
+            <th>selected quantity</th>
+            <th>amount</th>
+            <th></th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr >
+          <td>1</td>
+          
+          <td>Macbook Pro</td>
+          <td>8GB/256GB SSD</td>
+          <td><div class=”counter”>
+            <div class=”btn”>+</div>
+            <div class=”count”>1</div>
+            <div class=”btn”>-</div>
+            </div></td>
+          <td>120000</td>
+          
+          <td>
+          
+             <button type="reset">delete</button>
+            </td>
+         
+          </tr>
+    </tbody>
+</table>
+</body>
+</html>
